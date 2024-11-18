@@ -2,6 +2,27 @@
 import { Icon } from "astro-icon/components";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
+import { Slide } from "../components/Slide";
+
+const slides = [
+	{
+		image: "/slides/1.webp",
+	},
+	{
+		image: "/slides/2.webp",
+	},
+	{
+		image: "/slides/3.webp",
+	},
+	{
+		image: "/slides/4.webp",
+	},
+	{
+		image: "/slides/5.webp",
+	},
+	
+	
+]
 ---
 
 <Layout title="Cerrajero 24h - Servicio puntual">
@@ -65,5 +86,6 @@ import Layout from "../layouts/Layout.astro";
 				<img src="/logo_home.webp" alt="Cerrajero 24h" class="w-10/12 2xl:m-1" />
 			</div>
 		</section>
+		<Slide slides={slides} withImage='2xl:w-[33rem] w-[20rem]' heightImage='2xl:h-[18rem] h-[10rem]' client:load/>
 	</main>
 </Layout>
