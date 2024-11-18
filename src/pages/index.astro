@@ -1,9 +1,69 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import { Icon } from "astro-icon/components";
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Cerrajero 24h - Servicio puntual">
-	<main>
+	<main class="z-50 bg-transparent py-6 px-10 lg:px-16 2xl:px-32">
+		<Header />
+		<section class="mt-10 w-auto flex bg-primary rounded-2xl">
+			<div class="m-2 lg:m-7 2xl:m-14 rounded-2xl flex flex-col items-center lg:items-start 2xl:items-start w-full 2xl:w-8/12 md:w-9/12">
+				<div
+					class="rounded-2xl py-1 px-2 md:px-0 flex"
+				>
+					<span
+						class="text-white px-4 bg-gradient-to-tl from-amber-500 to-yellow-400 rounded-2xl py-1 font-bold text-4xl text-center inline-flex items-center justify-center"
+						>Urgencias <Icon name="mdi:hours-24" class="size-16 mx-2" />Horas
+					</span>
+					<!-- <span
+						class="text-black font-semibold px-4 text-2xl inline-flex items-center justify-center"
+						>Servicio puntual</span
+					> -->
+				</div>
+				<div class="flex flex-col items-left w-[25rem] md:w-full">
+					<h1
+						class="text-4xl lg:text-4xl 2xl:text-5xl text-black w-full text-center md:text-left font-bold mt-10 px-4 md:px-0"
+					>
+						Abrir y cambiar cerraduras
+					</h1>
+					<!-- <div
+						class="flex flex-col flex-nowrap gap-4 m-auto max-w-xs sm:flex-row sm:justify-center lg:justify-start lg:m-0"
+					>
+						<span
+							class="text-white bg-gradient-to-tl from-amber-500 to-yellow-400 rounded-2xl py-1 font-bold text-5xl md:text-4xl 2xl:text-5xl text-center inline-flex mt-3 md:mt-4 p-4"
+						>
+							Las 24 Horas
+						</span>
+					</div> -->
+				</div>
 
+				<h2
+					class="text-black mt-10 text-center md:text-left text-2xl lg:text-xl px-4 md:px-0"
+				>
+					Comunicate con nosotros y te ayudamos a solucionar tus problemas
+				</h2>
+				<div
+					class="flex flex-col flex-nowrap gap-4 m-auto max-w-xs sm:flex-row sm:justify-center lg:justify-start lg:m-0"
+				>
+					<button
+						class="bg-gradient-to-tl from-amber-500 to-yellow-400 hover:bg-yellow-600 text-xl font-semibold text-white px-4 py-2 rounded-xl mt-3 flex items-center gap-2"
+					>
+						<Icon name="line-md:phone-call-loop" class="size-8" />
+						<span>Llamar ahora</span>
+					</button>
+				</div>
+				<span
+					class="text-black mt-5 text-center md:text-left text-3xl px-2 font-semibold"
+				>
+					639 98 08 62 / 624 46 33 73
+				</span>
+			</div>
+			<div
+				class="hidden md:inline-flex text-center items-center justify-center "
+			>
+				<img src="/logo_home.webp" alt="Cerrajero 24h" class="w-10/12 2xl:m-1" />
+			</div>
+		</section>
 	</main>
 </Layout>
