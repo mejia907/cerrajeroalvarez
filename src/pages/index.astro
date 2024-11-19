@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import { Slide } from "../components/Slide";
+import Company from "../components/Company.astro";
 import Services from "../components/Services.astro";
 
 const slides = [
@@ -33,6 +34,7 @@ const slides = [
 			heightImage="2xl:h-[16rem]  lg:h-[15rem] md:h-[10rem]"
 			client:load
 		/>
+		<Company />
 		<Services />
 	</main>
 </Layout>
