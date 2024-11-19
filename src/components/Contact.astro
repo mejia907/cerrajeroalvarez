@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+---
+
+<section class="scroll-mt-16">
+  <div class="px-4 py-1 mx-auto max-w-full lg:px-8 lg:py-10">
+    <div class="md:mx-auto sm:text-center max-w-8xl">
+      <h2
+        class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-5 font-heading"
+      >
+        Contacto
+      </h2>
+      <div
+        class="mx-auto space-y-6 md:grid-cols-2 md:space-y-0 text-lg text-justify"
+      >
+        Si desea enviarnos sus sugerencias u observaciones por favor hágalo a
+        través denuestro formulario de contacto directo. Estaremos respondiendo
+        de la forma máságil a todas sus inquietudes.
+        <div class="mt-5"></div>
+      </div>
+    </div>
+    <div class="flex flex-col items-center">
+      <Image
+        src="/contact.webp"
+        alt="Contacto cerrajero 24 horas"
+        width={10}
+        height={10}
+        class="w-full md:w-1/2"
+        loading={"eager"}
+      />
+      <button
+        class="bg-gradient-to-tl from-amber-500 to-yellow-400 hover:bg-yellow-600 text-xl md:text-4xl font-semibold text-white px-4 py-3 rounded-xl flex items-center"
+      >
+        <Icon name="wpf:key-security" class=" size-16 md:size-8" />
+        <span class="ml-0 md:ml-4">APERTURA URGENTE DE PUERTAS 24 HORAS</span>
+      </button>
+    </div>
+  </div>
+</section>
