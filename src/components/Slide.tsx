@@ -6,27 +6,29 @@ import '../styles/global.css';
 
 type SlideProps = {
    slides: SlideType[],
-   withImage: string,
+   withImage?: string,
    heightImage: string
 }
 
 export const Slide = ({ slides, withImage, heightImage }: SlideProps) => {
 
-   const [emblaRef, emblaApi] = useEmblaCarousel({loop:true}, [
+   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
       AutoScroll({ playOnInit: true })
    ])
 
    return (
-      <section className="embla">
-         <div className="embla__viewport" ref={emblaRef}>
-            <div className="embla__container">
-               {slides.map((img, index) => (
-                  <div className="embla__slide" key={index}>
-                     <img src={`${img.image}`} className={`object-contain m-auto ${heightImage} ${withImage}`} />
-                  </div>
-               ))}
+      <section className="mt-24">
+         <div className="embla mt-10">
+            <div className="embla__viewport" ref={emblaRef}>
+               <div className="embla__container">
+                  {slides.map((img, index) => (
+                     <div className="embla__slide" key={index}>
+                        <img src={`${img.image}`} className={`object-contain m-auto ${heightImage} ${withImage}`} alt="Cerrajero 24h" />
+                     </div>
+                  ))}
+               </div>
             </div>
          </div>
-      </section >
+      </section>
    )
 }

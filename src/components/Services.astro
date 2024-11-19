@@ -1,0 +1,87 @@
+---
+import { Icon } from "astro-icon/components";
+
+const items = [
+  [
+    {
+      icon: "wpf:privacy",
+      title: "Cambio de cerraduras",
+      description:
+        "Realizamos cambios de Cerraduras sencillas, cerraduras de alta y mediana seguridad. Ya sea por razones de seguridad o actualización.",
+    },
+
+    {
+      icon: "wpf:maintenance",
+      title: "Reparación Cerraduras",
+      description:
+        "Ofrecemos servicios de reparación de cerraduras con soluciones rápidas y eficientes. Restauración de funcionalidad y seguridad de sus cerraduras.",
+    },
+    {
+      icon: "cbi:panel-front-door-locked",
+      title: "Suministro e Instalación de cerraduras fichet",
+      description:
+        "Las cerraduras Fichet, conocidas por su calidad y resistencia, garantizan una protección incomparable. Nuestros cerrajeros expertos le asesorarán sobre las mejores opciones adaptadas a sus necesidades específicas.",
+    },
+  ],
+  [
+    {
+      icon: "wpf:key-security",
+      title: "Apertura de puertas",
+      description:
+        "Con experiencia en todo tipo de cerraduras, proporcionamos soluciones confiables para recuperar el acceso a su espacio de manera eficiente.",
+    },
+    {
+      icon: "mdi:blinds-horizontal",
+      title: "Instalación de persianas metálicas",
+      description:
+        "Realizamos instalación desde cero y reparación tanto mecánica como por desgaste para la persiana de su local, recuperando la funcionalidad, devolviendo la privacidad y seguridad.",
+    },
+    {
+      icon: "solar:user-speak-linear",
+      title: "Asesoría gratuita",
+      description:
+        "Asesoría gratuita en seguridad para tu hogar, oficinas y locales.",
+    },
+  ],
+];
+---
+
+<section class="scroll-mt-16 pt-10" id="affiliates">
+  <div
+    class="px-4 py-1 mx-auto max-w-full lg:px-8 lg:py-10"
+    data-aos="fade-right"
+  >
+    <div class="mb-10 md:mx-auto sm:text-center md:mb-12 max-w-4xl">
+      <h2
+        class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+      >
+        Servicios
+      </h2>
+      <span class="text-xl">
+        <span class="font-bold">Cerrajeros 24 horas</span>
+        brinda diferentes servicios para tu hogar, oficinas y locales
+      </span>
+    </div>
+    <div class="grid mx-auto space-y-6 md:grid-cols-2 md:space-y-0">
+      {
+        items.map((subitems) => (
+          <div class="space-y-8 sm:px-8">
+            {subitems.map(({ icon, title, description }) => (
+              <div class="flex flex-row max-w-xl">
+                <div class="mb-4 mr-4">
+                  <div class="text-white flex items-center justify-center w-12 h-12 rounded-full bg-primary">
+                    {icon && <Icon name={icon} class="w-6 h-6 " />}
+                  </div>
+                </div>
+                <div>
+                  <h3 class="mb-3 text-xl font-bold">{title}</h3>
+                  <p class="text-black text-lg">{description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
