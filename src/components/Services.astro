@@ -1,7 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
-const items = [
+const itemsServices = [
   [
     {
       icon: "wpf:privacy",
@@ -22,6 +23,12 @@ const items = [
       description:
         "Las cerraduras Fichet, conocidas por su calidad y resistencia, garantizan una protección incomparable. Nuestros cerrajeros expertos le asesorarán sobre las mejores opciones adaptadas a sus necesidades específicas.",
     },
+    {
+      icon: "solar:user-speak-linear",
+      title: "Asesoría gratuita",
+      description:
+        "Asesoría gratuita en seguridad para tu hogar, oficinas y locales.",
+    },
   ],
   [
     {
@@ -37,18 +44,42 @@ const items = [
         "Realizamos instalación desde cero y reparación tanto mecánica como por desgaste para la persiana de su local, recuperando la funcionalidad, devolviendo la privacidad y seguridad.",
     },
     {
-      icon: "solar:user-speak-linear",
-      title: "Asesoría gratuita",
+      icon: "mdi:blinds-horizontal",
+      title: "Instalación de persianas motorizadas para tu hogar",
       description:
-        "Asesoría gratuita en seguridad para tu hogar, oficinas y locales.",
+        "Realizamos instalación y reparación de persianas motorizadas, gracias a la avanzada tecnología de radio integrada en los motores, tienes el poder de abrir y cerrar tus persianas con facilidad desde el confort de tu mando a distancia."
+    },
+  ],
+];
+
+const itemsBrands = [
+  [
+    {
+      urlIcon: "/brands/tesa.webp",
+      title: "Tesa",
+    },
+    {
+      urlIcon: "/brands/ezcurra.webp",
+      title: "Ezcurra",
+    },
+    {
+      urlIcon: "/brands/pff.webp",
+      title: "Pff",
+    },
+    {
+      urlIcon: "/brands/sidese.webp",
+      title: "Siedes",
+    },
+    {
+      urlIcon: "/brands/arcu.webp",
+      title: "Arcu",
     },
   ],
 ];
 ---
 
 <section class="scroll-mt-16">
-  <div
-    class="px-4 py-1 mx-auto max-w-full lg:px-8 lg:py-10">
+  <div class="px-4 py-8 mx-auto max-w-full lg:px-8 lg:py-10">
     <div class="mb-10 md:mx-auto sm:text-center md:mb-12 max-w-4xl">
       <h2
         class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
@@ -62,7 +93,7 @@ const items = [
     </div>
     <div class="grid mx-auto space-y-6 md:grid-cols-2 md:space-y-0">
       {
-        items.map((subitems) => (
+        itemsServices.map((subitems) => (
           <div class="space-y-8 sm:px-8">
             {subitems.map(({ icon, title, description }) => (
               <div class="flex flex-row max-w-xl">
@@ -73,7 +104,7 @@ const items = [
                 </div>
                 <div>
                   <h3 class="mb-3 text-xl font-bold">{title}</h3>
-                  <p class="text-black text-lg">{description}</p>
+                  <p class="text-black text-lg text-justify">{description}</p>
                 </div>
               </div>
             ))}
@@ -82,4 +113,22 @@ const items = [
       }
     </div>
   </div>
+</section>
+<section class="text-center">
+  <span
+    class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+  >
+    Trabajamos con las mejores marcas
+  </span>
+  {
+    itemsBrands.map((subitems) => (
+      <div class="grid grid-cols-2 mx-auto space-y-6 md:grid-cols-5  py-10">
+        {subitems.map(({ urlIcon, title }) => (
+          <div class="flex items-center justify-center ">
+            <Image src={urlIcon} alt={title} width={10} height={10}  class="2xl:w-3/5 w-3/5" />
+          </div>
+        ))}
+      </div>
+    ))
+  }
 </section>
