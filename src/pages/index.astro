@@ -7,6 +7,7 @@ import Company from "../components/Company.astro";
 import Services from "../components/Services.astro";
 import Clients from "../components/Clients.astro";
 import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 
 const slides = [
 	{
@@ -28,7 +29,7 @@ const slides = [
 ---
 
 <Layout title="Cerrajero 24h - Servicio puntual">
-	<main class="z-50 bg-transparent py-6 px-10 lg:px-16 2xl:px-32">
+	<main class="z-50 bg-transparent py-6 px-4 lg:px-16 2xl:px-32">
 		<Header />
 		<Hero />
 		<Slide
@@ -41,4 +42,5 @@ const slides = [
 		<Clients />
 		<Contact />
 	</main>
+	<Footer />
 </Layout>
