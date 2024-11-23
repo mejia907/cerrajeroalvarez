@@ -8,6 +8,7 @@ import Services from "../components/Services.astro";
 import Clients from "../components/Clients.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
+import { Icon } from "astro-icon/components";
 
 const slides = [
 	{
@@ -34,7 +35,8 @@ const slides = [
 		<Hero />
 		<Slide
 			slides={slides}
-			heightImage="2xl:h-[16rem]  lg:h-[15rem] md:h-[10rem]"
+			withImage="2xl:w-[17rem] lg:w-[20rem] w-[9rem] max-w-[30rem]"
+			heightImage="2xl:h-[15rem] lg:h-[15rem] h-[8rem] max-h-[20rem]"
 			client:load
 		/>
 		<Company />
@@ -43,4 +45,15 @@ const slides = [
 		<Contact />
 	</main>
 	<Footer />
+	<div class="fixed bottom-4 right-4">
+		<Icon
+			name="logos:whatsapp-icon"
+			class="fixed size-12 md:bottom-8 bottom-16 right-3 text-green-600 text-4xl cursor-pointer"
+			onclick="window.open('https://api.whatsapp.com/send?phone=34639980862', '_blank')"
+		/>
+	</div>
+	<button class="fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-tl from-amber-500 to-yellow-400 hover:bg-yellow-600 text-xl font-semibold text-white px-4 py-3 items-center  w-full flex md:hidden text-center justify-center" onclick="window.location.href = 'tel:639980862';">
+		<Icon name="line-md:phone-call-loop" class="size-8 mr-2" />
+		<span>Llamar ahora</span>
+	</button>
 </Layout>

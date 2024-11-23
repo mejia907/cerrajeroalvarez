@@ -1,7 +1,7 @@
 .embla {
   max-width: 155rem;
   margin: auto;
-  --slide-spacing: 4rem;
+  --slide-spacing: 14rem;
   --slide-size: 30%;
 }
 .embla__viewport {

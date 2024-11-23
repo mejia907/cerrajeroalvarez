@@ -20,10 +20,10 @@ export const Slide = ({ slides, withImage, heightImage }: SlideProps) => {
       <section className="mt-24">
          <div className="embla mt-10">
             <div className="embla__viewport" ref={emblaRef}>
-               <div className="embla__container">
+               <div className="embla__container ">
                   {slides.map((img, index) => (
                      <div className="embla__slide" key={index}>
-                        <img src={`${img.image}`} className={`object-contain m-auto shadow-img ${heightImage} ${withImage}`} alt="Cerrajero 24h"  />
+                        <img src={`${img.image}`} className={`shadow-img gap-x-10 ${heightImage} ${withImage}`} alt="Cerrajero 24h"  />
                      </div>
                   ))}
                </div>

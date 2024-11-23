@@ -34,17 +34,23 @@ import { Icon } from "astro-icon/components";
       class="flex flex-col flex-nowrap gap-4 m-auto max-w-xs sm:flex-row sm:justify-center lg:justify-start lg:m-0 2xl:pt-16 pt-2"
     >
       <button
-        class="bg-gradient-to-tl from-amber-500 to-yellow-400 hover:bg-yellow-600 text-xl font-semibold text-white px-4 py-2 rounded-xl mt-3 flex items-center gap-2"
+        class="bg-gradient-to-tl from-amber-500 to-yellow-400 hover:bg-yellow-600 text-xl font-semibold text-white px-4 py-2 rounded-xl mt-3 flex items-center gap-2" onclick="window.location.href = 'tel:639980862';"
       >
         <Icon name="line-md:phone-call-loop" class="size-8" />
         <span>Llamar ahora</span>
       </button>
     </div>
     <span
-      class="text-black mt-5 text-center md:text-left text-4xl 2xl:text-5xl px-2 font-bold"
+      class="text-black mt-5 text-center md:text-left text-4xl 2xl:text-5xl px-2 font-bold md:flex hidden"
     >
       639 98 08 62 / 624 46 33 73
     </span>
+    <div
+      class="text-black mt-5 text-center md:text-left text-4xl 2xl:text-5xl px-2 font-bold md:hidden flex flex-col"
+    >
+      <p>639 98 08 62</p> 
+      <p>624 46 33 73</p>
+    </div>
   </div>
   <div class="hidden md:inline-flex text-center items-center justify-center">
     <img
