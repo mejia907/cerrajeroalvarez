@@ -1,4 +1,6 @@
 ---
+import { SEO } from "astro-seo";
+
 interface Props {
 	title: string;
 }
@@ -7,8 +9,12 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
+		<SEO
+			title="Cerrajeros 24 HORAS"
+			description="Somos Cerrajeros 24 horas en Barcelona líderes en el mercado de cerrajería, ofrecemos servicios de: Aperturas URGENTE de puertas, instalación y venta de cerraduras"
+		/>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
@@ -20,31 +26,3 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #ffff;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>

@@ -2,7 +2,34 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 
+/// Lista de servicios
 const itemsServices = [
+  [
+    {
+      icon: "mdi:alarm-light",
+      title: "Instalación de alarmas de seguridad",
+      description:
+        "Realizamos instalación alarmas de seguridad para su casa y así cuentes con la seguridad más avanzada. Esta siempre conectada a una central receptora que garantice una respuesta rápida y eficaz en caso de salto de alarma o emergencia, así como la intervención policial en caso de intrusión confirmada. Nos encargamos de instalar tu alarma en casa y del mantenimiento, garantizando así su óptimo funcionamiento.",
+    },
+    {
+      icon: "mdi:blinds-horizontal",
+      title: "Instalación de persianas metálicas",
+      description:
+        "Realizamos apertura de urgencia, instalación desde cero y reparación tanto mecánica como por desgaste para la persiana de su local, recuperando la funcionalidad, devolviendo la privacidad y seguridad.",
+    },
+    {
+      icon: "mdi:blinds-horizontal-closed",
+      title: "Instalación de persianas motorizadas para tu hogar",
+      description:
+        "Realizamos instalación y reparación de persianas motorizadas, gracias a la avanzada tecnología de radio integrada en los motores, tienes el poder de abrir y cerrar tus persianas con facilidad desde el confort de tu mando a distancia.",
+    },
+    {
+      icon: "solar:shield-bold",
+      title: "Instalación de escudo protector magnético",
+      description:
+        "Realizamos instalación de escudo protector magnetico para su puerta, aportando una protección adicional al cilindro contra ataques vandálicos como la rotura del puente o la extracción. El escudo se desbloquea a través de un llavero magnético con combinación; Incluye 2 llaves magnéticas y montaje sin tornilleria pasante.",
+    },
+  ],
   [
     {
       icon: "wpf:privacy",
@@ -10,7 +37,6 @@ const itemsServices = [
       description:
         "Realizamos cambios de Cerraduras sencillas, cerraduras de alta y mediana seguridad. Ya sea por razones de seguridad o actualización.",
     },
-
     {
       icon: "wpf:maintenance",
       title: "Reparación Cerraduras",
@@ -24,43 +50,30 @@ const itemsServices = [
         "Las cerraduras Fichet, conocidas por su calidad y resistencia, garantizan una protección incomparable. Nuestros cerrajeros expertos le asesorarán sobre las mejores opciones adaptadas a sus necesidades específicas.",
     },
     {
-      icon: "solar:user-speak-linear",
-      title: "Asesoría gratuita",
-      description:
-        "Asesoría gratuita en seguridad para tu hogar, oficinas y locales.",
-    },
-  ],
-  [
-    {
       icon: "wpf:key-security",
       title: "Apertura de puertas",
       description:
         "Con experiencia en todo tipo de cerraduras, proporcionamos soluciones confiables para recuperar el acceso a su espacio de manera eficiente.",
     },
     {
-      icon: "mdi:blinds-horizontal",
-      title: "Instalación de persianas metálicas",
+      icon: "solar:user-speak-linear",
+      title: "Asesoría gratuita",
       description:
-        "Realizamos instalación desde cero y reparación tanto mecánica como por desgaste para la persiana de su local, recuperando la funcionalidad, devolviendo la privacidad y seguridad.",
-    },
-    {
-      icon: "mdi:blinds-horizontal",
-      title: "Instalación de persianas motorizadas para tu hogar",
-      description:
-        "Realizamos instalación y reparación de persianas motorizadas, gracias a la avanzada tecnología de radio integrada en los motores, tienes el poder de abrir y cerrar tus persianas con facilidad desde el confort de tu mando a distancia."
+        "Asesoría gratuita en seguridad para tu hogar, oficinas y locales.",
     },
   ],
 ];
 
-const itemsBrands = [
+/// Lista de marcas
+const itemsBrandsLeft = [
   [
     {
       urlIcon: "/brands/tesa.webp",
       title: "Tesa",
     },
     {
-      urlIcon: "/brands/ezcurra.webp",
-      title: "Ezcurra",
+      urlIcon: "/brands/keyla.webp",
+      title: "Keyla",
     },
     {
       urlIcon: "/brands/pff.webp",
@@ -71,6 +84,14 @@ const itemsBrands = [
       title: "Soler",
     },
     {
+      urlIcon: "/brands/mottura.webp",
+      title: "Mottura",
+    },
+  ],
+];
+const itemsBrandsRight = [
+  [
+    {
       urlIcon: "/brands/sidese.webp",
       title: "Siedes",
     },
@@ -78,11 +99,20 @@ const itemsBrands = [
       urlIcon: "/brands/arcu.webp",
       title: "Arcu",
     },
+    {
+      urlIcon: "/brands/MC.webp",
+      title: "M&C",
+    },
+
+    // {
+    //   urlIcon: "/brands/direct.webp",
+    //   title: "Securitas Direct",
+    // },
   ],
 ];
 ---
 
-<section class="scroll-mt-16">
+<section class="scroll-mt-16" id="services">
   <div class="px-4 py-8 mx-auto max-w-full lg:px-8 lg:py-10">
     <div class="mb-10 md:mx-auto sm:text-center md:mb-12 max-w-4xl">
       <h2
@@ -124,15 +154,68 @@ const itemsBrands = [
   >
     Trabajamos con las mejores marcas
   </span>
-  {
+  <div
+    class="grid mx-auto space-y-6 md:grid-cols-3 md:space-y-0 items-center justify-center"
+  >
+    {
+      itemsBrandsLeft.map((subitems) => (
+        <div class="space-y-8 sm:px-8">
+          {subitems.map(({ urlIcon, title }) => (
+            <div class="flex flex-row md:justify-start justify-center">
+              <Image
+                src={urlIcon}
+                alt={title}
+                width={10}
+                height={10}
+                class="md:w-3/5 w-2/5 my-6"
+              />
+            </div>
+          ))}
+        </div>
+      ))
+    }
+    <div class="flex flex-row md:justify-end justify-center">
+      <Image
+        src="/brands.webp"
+        alt="Marcas cerrajeros 24 horas"
+        width={10}
+        height={10}
+        class="md:w-full w-1/2 shadow-img"
+      />
+    </div>
+    {
+      itemsBrandsRight.map((subitems) => (
+        <div class="space-y-8 sm:px-8">
+          {subitems.map(({ urlIcon, title }) => (
+            <div class="flex flex-row md:justify-end justify-center">
+              <Image
+                src={urlIcon}
+                alt={title}
+                width={10}
+                height={10}
+                class="md:w-3/5 w-2/5"
+              />
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+  <!-- {
     itemsBrands.map((subitems) => (
-      <div class="grid grid-cols-2 mx-auto space-y-6 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6  py-6">
+      <div class="grid grid-cols-2 mx-auto space-y-6 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-5 py-6">
         {subitems.map(({ urlIcon, title }) => (
           <div class="flex items-center justify-center ">
-            <Image src={urlIcon} alt={title} width={10} height={10}  class="2xl:w-3/5 w-3/5" />
+            <Image
+              src={urlIcon}
+              alt={title}
+              width={10}
+              height={10}
+              class="2xl:w-3/5 w-3/5"
+            />
           </div>
         ))}
       </div>
     ))
-  }
+  } -->
 </section>

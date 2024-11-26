@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
@@ -8,8 +9,10 @@ import Services from "../components/Services.astro";
 import Clients from "../components/Clients.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
-import { Icon } from "astro-icon/components";
 
+import "aos/dist/aos.css";
+
+/// Lista de imagenes para el slider [public/slides]
 const slides = [
 	{
 		image: "/slides/1.webp",
@@ -26,11 +29,17 @@ const slides = [
 	{
 		image: "/slides/5.webp",
 	},
+	{
+		image: "/slides/6.webp",
+	},
+	{
+		image: "/slides/7.webp",
+	},
 ];
 ---
 
 <Layout title="Cerrajero 24h - Servicio puntual">
-	<main class="z-50 bg-transparent py-6 px-4 lg:px-16 2xl:px-32">
+	<main class="bg-transparent px-4 lg:px-16 2xl:px-52">
 		<Header />
 		<Hero />
 		<Slide
@@ -45,15 +54,29 @@ const slides = [
 		<Contact />
 	</main>
 	<Footer />
-	<div class="fixed bottom-4 right-4">
+	<!-- Whatsapp -->
+	<div class="fixed">
 		<Icon
 			name="logos:whatsapp-icon"
-			class="fixed size-12 md:bottom-8 bottom-16 right-3 text-green-600 text-4xl cursor-pointer"
+			class="fixed size-12 md:bottom-8 bottom-16 md:right-7 right-3 hover:rounded-full p-[2px] hover:border-green-500 hover:border-2 cursor-pointer"
 			onclick="window.open('https://api.whatsapp.com/send?phone=34639980862', '_blank')"
 		/>
 	</div>
-	<button class="fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-tl from-amber-500 to-yellow-400 hover:bg-yellow-600 text-xl font-semibold text-white px-4 py-3 items-center  w-full flex md:hidden text-center justify-center" onclick="window.location.href = 'tel:639980862';">
+	<!-- Icono llamar solo en modo mobile -->
+	<button
+		class="fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-tl from-amber-500 to-yellow-400 hover:bg-yellow-600 text-xl font-semibold text-white px-4 py-3 items-center w-full flex md:hidden text-center justify-center"
+		onclick="window.location.href = 'tel:639980862';"
+	>
 		<Icon name="line-md:phone-call-loop" class="size-8 mr-2" />
 		<span>Llamar ahora</span>
 	</button>
 </Layout>
+
+<!--Libreria animaciones AOS -->
+<script>
+	import AOS from "aos";
+	AOS.init({
+		duration: 1000,
+		once: true,
+	});
+</script>
