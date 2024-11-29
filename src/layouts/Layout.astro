@@ -14,12 +14,19 @@ const { title } = Astro.props;
 		<SEO
 			title="Cerrajeros 24 HORAS"
 			description="Somos Cerrajeros 24 horas en Barcelona líderes en el mercado de cerrajería, ofrecemos servicios de: Aperturas URGENTE de puertas, instalación y venta de cerraduras"
+			canonical={Astro.url.href}
+			openGraph={{
+				basic: {
+					title: "Cerrajeros 24 HORAS Barcelona",
+					type: "website",
+					image: "/logo.webp",
+				}
+			}}
 		/>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta name="keywords" content="cerrajero, cerrajero 24 horas, cerrajero 24h, cerrajero 24 horas barcelona, cerrajero barcelona" />
 		<title>{title}</title>
 	</head>
 	<body>

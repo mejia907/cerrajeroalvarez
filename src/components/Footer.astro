@@ -3,39 +3,69 @@ import { Icon } from "astro-icon/components";
 ---
 
 <footer class="text-white border-t border-primary bg-primary">
-  <div class="max-w-6xl 2xl:max-w-[100rem] mx-auto px-4 sm:px-6">
-    <div class="grid grid-cols-12 gap-4 py-4 md:py-10">
-      <div class="col-span-12 lg:col-span-4 pr-8">
-        <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={"/"}>
-            Contáctenos
-          </a>
+  <div class="grid md:grid-cols-2">
+    <div class="px-12 py-4 md:py-10  ">
+      <div class="flex gap-4 py-4 md:py-10">
+        <div class="col-span-12 lg:col-span-4 pr-8">
+          <div class="mb-2">
+            <a class="inline-block font-bold text-xl" href={"/"}>
+              Contáctenos
+            </a>
+          </div>
+          <div class="text-sm text-white">
+            <ul class="text-base">
+              <li class="mb-2 flex">
+                <Icon name="mdi:phone" class="size-5 mr-2" /> 639 98 08 62 / 624
+                46 33 73
+              </li>
+              <li class="mb-2 flex">
+                <Icon name="mdi:email-outline" class="size-5 mr-2" /> cerrajero24hrsbarcelona@gmail.com
+              </li>
+              <li class="mb-2 flex">
+                <Icon name="mdi:location-on-outline" class="size-5 mr-2" /> Barcelona
+                - España
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="text-sm text-white">
-          
-        <ul class="text-base">
-          <li class="mb-2 flex">
-            <Icon name="mdi:phone" class="size-5 mr-2" /> 639 98 08 62 / 624 46 33 73
-          </li>
-          <li class="mb-2 flex">
-            <Icon name="mdi:email-outline" class="size-5 mr-2" /> cerrajero24hrsbarcelona@gmail.com
-          </li>
-          <li class="mb-2 flex">
-            <Icon name="mdi:location-on-outline" class="size-5 mr-2" /> Barcelona - España
-          </li>
-        </ul>
+      </div>
+      <div
+        class="md:flex md:items-center py-6 md:py-8 "
+      >
+        <div class="text-xs md:text-sm text-white">
+          © 2024
+          <a class="hover:underline text-white" href="#home">
+            CERRAJEROS 24 HORAS
+          </a>
+          · Todos los derechos reservados.
         </div>
       </div>
     </div>
-    <div class="md:flex md:items-center md:justify-between py-6 md:py-8 mb-10 md:mb-0">
-      <div class=" text-xs md:text-sm text-white">
-        © 2024
-        <a class="hover:underline text-white" href="#home">
-         
-          CERRAJEROS 24 HORAS
-        </a>
-        · Todos los derechos reservados.
-      </div>
+    <div class="mx-auto md:max-w-4xl max-w-sm py-0 md:py-20 text-sm mb-20 md:mb-0">
+      <p>
+        <strong>Política de privacidad</strong> 
+        <p>Quiénes somos Propiedad: LUIS MANUEL CAGIGAS LOPEZ. La dirección de nuestra web es: https://cerrajeroluis24horas.com.</p>
+      </p>
+      <p class="mt-4">
+        <strong>Contenido incrustado de otros sitios web: </strong>
+        Los artículos de este sitio pueden incluir contenido incrustado (por ejemplo,
+        vídeos, imágenes, artículos, etc.). El contenido incrustado de otras webs
+        se comporta exactamente de la misma manera que si el visitante hubiera visitado
+        la otra web. Estas web pueden recopilar datos sobre ti, utilizar cookies,
+        incrustar un seguimiento adicional de terceros, y supervisar tu interacción
+        con ese contenido incrustado, incluido el seguimiento de tu interacción con
+        el contenido incrustado si tienes una cuenta y estás conectado a esa web.
+      </p>
+      <p class="mt-4">
+        <strong>Cuánto tiempo conservamos tus datos: </strong>
+        De los usuarios que se registran en nuestra web (si los hay), también almacenamos
+        la información personal que proporcionan en su perfil de usuario.
+      </p>
+      <p class="mt-4">
+        <strong>Dónde se envían tus datos: </strong>
+        Los comentarios de los visitantes puede que los revise un servicio de detección
+        automática de spam.
+      </p>
     </div>
   </div>
 </footer>

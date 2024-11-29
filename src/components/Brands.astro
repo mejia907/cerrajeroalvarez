@@ -1,0 +1,126 @@
+---
+import { Image } from "astro:assets";
+
+/// Lista de marcas columna izquierda
+const itemsBrandsLeft = [
+  [
+    {
+      urlIcon: "/brands/tesa.webp",
+      title: "Tesa",
+    },
+    {
+      urlIcon: "/brands/keyla.webp",
+      title: "Keyla",
+    },
+    {
+      urlIcon: "/brands/pff.webp",
+      title: "Pff",
+    },
+    {
+      urlIcon: "/brands/soler.webp",
+      title: "Soler",
+    },
+    {
+      urlIcon: "/brands/mottura.webp",
+      title: "Mottura",
+    },
+  ],
+];
+
+/// Lista de marcas columna derecha
+const itemsBrandsRight = [
+  [
+    {
+      urlIcon: "/brands/sidese.webp",
+      title: "Siedes",
+    },
+    {
+      urlIcon: "/brands/arcu.webp",
+      title: "Arcu",
+    },
+    {
+      urlIcon: "/brands/MC.webp",
+      title: "M&C",
+    },
+
+    {
+      urlIcon: "/brands/direct.webp",
+      title: "Securitas Direct",
+    },
+  ],
+];
+---
+
+<section class="scroll-mt-16 pt-10 mx-auto" id="services">
+  <div class="px-4 py-8 mx-auto lg:px-8 lg:py-10 text-center max-w-7xl">
+    <span
+      class="text-2xl md:text-4xl font-bold leading-tighter tracking-tighter font-heading"
+    >
+      Trabajamos con las mejores marcas
+    </span>
+    <div
+      class="grid mx-auto md:grid-cols-3 grid-cols-2 md:space-y-0 items-center justify-center"
+    >
+      {
+        itemsBrandsLeft.map((subitems) => (
+          <div class="space-y-8 sm:px-8">
+            {subitems.map(({ urlIcon, title }) => (
+              <div class="flex flex-row md:justify-start justify-center">
+                <Image
+                  src={urlIcon}
+                  alt={title}
+                  width={10}
+                  height={10}
+                  class="md:w-1/2 w-1/3 md:my-4 my-5"
+                />
+              </div>
+            ))}
+          </div>
+        ))
+      }
+      <div class="hidden md:flex flex-row md:justify-end justify-center">
+        <Image
+          src="/brands.webp"
+          alt="Marcas cerrajeros 24 horas"
+          width={10}
+          height={10}
+          class="md:w-full w-1/3 md:my-0 my-4 shadow-img"
+        />
+      </div>
+      {
+        itemsBrandsRight.map((subitems) => (
+          <div class="space-y-8 sm:px-8">
+            {subitems.map(({ urlIcon, title }) => (
+              <div class="flex flex-row md:justify-end justify-center">
+                <Image
+                  src={urlIcon}
+                  alt={title}
+                  width={1}
+                  height={1}
+                  class="md:w-1/3 w-1/3 md:my-0 my-2"
+                />
+              </div>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <!-- {
+    itemsBrands.map((subitems) => (
+      <div class="grid grid-cols-2 mx-auto space-y-6 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-5 py-6">
+        {subitems.map(({ urlIcon, title }) => (
+          <div class="flex items-center justify-center ">
+            <Image
+              src={urlIcon}
+              alt={title}
+              width={10}
+              height={10}
+              class="2xl:w-3/5 w-3/5"
+            />
+          </div>
+        ))}
+      </div>
+    ))
+  } -->
+</section>

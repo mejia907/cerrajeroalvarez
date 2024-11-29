@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
+
+import TitleSection from "./common/TitleSection.astro";
 
 /// Lista de servicios
 const itemsServices = [
@@ -63,63 +64,12 @@ const itemsServices = [
     },
   ],
 ];
-
-/// Lista de marcas
-const itemsBrandsLeft = [
-  [
-    {
-      urlIcon: "/brands/tesa.webp",
-      title: "Tesa",
-    },
-    {
-      urlIcon: "/brands/keyla.webp",
-      title: "Keyla",
-    },
-    {
-      urlIcon: "/brands/pff.webp",
-      title: "Pff",
-    },
-    {
-      urlIcon: "/brands/soler.webp",
-      title: "Soler",
-    },
-    {
-      urlIcon: "/brands/mottura.webp",
-      title: "Mottura",
-    },
-  ],
-];
-const itemsBrandsRight = [
-  [
-    {
-      urlIcon: "/brands/sidese.webp",
-      title: "Siedes",
-    },
-    {
-      urlIcon: "/brands/arcu.webp",
-      title: "Arcu",
-    },
-    {
-      urlIcon: "/brands/MC.webp",
-      title: "M&C",
-    },
-
-    // {
-    //   urlIcon: "/brands/direct.webp",
-    //   title: "Securitas Direct",
-    // },
-  ],
-];
 ---
 
-<section class="scroll-mt-16" id="services">
-  <div class="px-4 py-8 mx-auto max-w-full lg:px-8 lg:py-10">
+<section class="scroll-mt-16 pt-10 mx-auto bg-gray-400/10" id="services">
+  <div class="px-4 py-8 mx-auto lg:px-8 lg:py-10  max-w-7xl ">
     <div class="mb-10 md:mx-auto sm:text-center md:mb-12 max-w-4xl">
-      <h2
-        class="text-3xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
-      >
-        Servicios
-      </h2>
+      <TitleSection title="Servicios" />
       <span class="text-xl">
         <span class="font-bold">Cerrajeros 24 horas</span>
         brinda diferentes servicios para tu hogar, oficinas y locales
@@ -128,7 +78,7 @@ const itemsBrandsRight = [
     <div class="grid mx-auto space-y-6 md:grid-cols-2 md:space-y-0">
       {
         itemsServices.map((subitems) => (
-          <div class="space-y-8 sm:px-8">
+          <div class="space-y-8">
             {subitems.map(({ icon, title, description }) => (
               <div class="flex flex-row max-w-xl">
                 <div class="mb-4 mr-4">
@@ -147,75 +97,4 @@ const itemsBrandsRight = [
       }
     </div>
   </div>
-</section>
-<section class="text-center">
-  <span
-    class="text-2xl md:text-4xl font-bold leading-tighter tracking-tighter font-heading"
-  >
-    Trabajamos con las mejores marcas
-  </span>
-  <div
-    class="grid mx-auto space-y-6 md:grid-cols-3 md:space-y-0 items-center justify-center"
-  >
-    {
-      itemsBrandsLeft.map((subitems) => (
-        <div class="space-y-8 sm:px-8">
-          {subitems.map(({ urlIcon, title }) => (
-            <div class="flex flex-row md:justify-start justify-center">
-              <Image
-                src={urlIcon}
-                alt={title}
-                width={10}
-                height={10}
-                class="md:w-3/5 w-2/5 my-6"
-              />
-            </div>
-          ))}
-        </div>
-      ))
-    }
-    <div class="flex flex-row md:justify-end justify-center">
-      <Image
-        src="/brands.webp"
-        alt="Marcas cerrajeros 24 horas"
-        width={10}
-        height={10}
-        class="md:w-full w-1/2 shadow-img"
-      />
-    </div>
-    {
-      itemsBrandsRight.map((subitems) => (
-        <div class="space-y-8 sm:px-8">
-          {subitems.map(({ urlIcon, title }) => (
-            <div class="flex flex-row md:justify-end justify-center">
-              <Image
-                src={urlIcon}
-                alt={title}
-                width={10}
-                height={10}
-                class="md:w-3/5 w-2/5"
-              />
-            </div>
-          ))}
-        </div>
-      ))
-    }
-  </div>
-  <!-- {
-    itemsBrands.map((subitems) => (
-      <div class="grid grid-cols-2 mx-auto space-y-6 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-5 py-6">
-        {subitems.map(({ urlIcon, title }) => (
-          <div class="flex items-center justify-center ">
-            <Image
-              src={urlIcon}
-              alt={title}
-              width={10}
-              height={10}
-              class="2xl:w-3/5 w-3/5"
-            />
-          </div>
-        ))}
-      </div>
-    ))
-  } -->
 </section>

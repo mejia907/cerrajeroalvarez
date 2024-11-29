@@ -1,72 +1,76 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+import Button from "./common/Button.astro";
 ---
 
-<section class="mt-14 2xl:mt-20 w-auto flex bg-white rounded-2xl">
+<section
+  class="mt-4 lg:mt-0 2xl:mt-0 w-auto flex bg-white h-screen flex-col items-center bg-no-repeat bg-cover"
+  style="background-image: url('/background.png')"
+>
+  <Image
+    src="/home.webp"
+    width={10}
+    height={10}
+    alt="Cerrajero 24h"
+    class="md:w-[23%] lg:w-[23%] w-[70%] z-0"
+    loading={"eager"}
+    data-aos="zoom-out"
+    data-aos-duration="2000"
+  />
   <div
-    class="rounded-2xl flex flex-col items-center lg:items-start 2xl:items-start w-full 2xl:w-8/12 md:w-9/12"
-    data-aos="flip-left"
+    class="md:w-3/5 w-[90%] h-[72%] md:h-[33%] lg:h-[50%] 2xl:h-[52%] bg-white top-[44%]  border-2 border-primary rounded-lg z-10 flex flex-col items-center absolute" data-aos="zoom-in" data-aos-duration="1000"
   >
     <div
-      class="rounded-2xl py-1 px-2 md:px-0 2xl:inline-flex md:inline-flex lg:inline-flex text-center items-center justify-center"
+      class="lg:pt-1 2xl:pt-4 pt-2 px-2 md:px-0 2xl:inline-flex md:inline-flex lg:inline-flex"
     >
-      <span class="text-black font-bold 2xl:text-6xl text-5xl">
-        URGENCIAS
-      </span>
+      <div class="text-center items-center justify-center flex">
+        <span
+          class="text-black font-bold md:text-7xl lg:text-5xl text-5xl 2xl:text-7xl"
+        >
+          URGENCIAS
+        </span>
+      </div>
       <div class="text-center items-center justify-center flex">
         <Icon name="mdi:hours-24" class="size-20 mx-2 text-amber-500" />
       </div>
-      <span class="text-black font-bold 2xl:text-6xl text-5xl">HORAS</span>
+      <div class="text-center items-center justify-center flex">
+        <span
+          class="text-black font-bold md:text-7xl lg:text-5xl text-5xl 2xl:text-7xl"
+        >
+          HORAS
+        </span>
+      </div>
     </div>
-    <div class="flex flex-col items-left w-[25rem] md:w-full">
+    <div class="text-center items-center justify-center flex">
       <h1
-        class="text-4xl lg:text-4xl 2xl:text-5xl text-black w-full text-center md:text-left font-bold mt-10 px-4 md:px-0"
+        class="text-2xl lg:text-3xl 2xl:text-5xl text-black w-full font-bold mt-1 2xl:mt-5 lg:mt-0 px-4 md:px-0"
       >
         Abrir y cambiar cerraduras
       </h1>
     </div>
-
-    <h2
-      class="text-black mt-5 text-center md:text-left text-2xl lg:text-xl px-4 md:px-0"
-    >
-      Comunicate con nosotros y te ayudamos a solucionar tus problemas
-    </h2>
-    <div
-      class="flex flex-col flex-nowrap gap-4 m-auto max-w-xs sm:flex-row sm:justify-center lg:justify-start lg:m-0 2xl:pt-16 pt-2"
-    >
-      <button
-        class="bg-gradient-to-tl from-amber-500 to-yellow-400 hover:bg-yellow-600 text-xl font-semibold text-white px-4 py-2 rounded-xl mt-3 flex items-center gap-2"
-        onclick="window.location.href = 'tel:639980862';"
+    <div class="text-center items-center justify-center flex">
+      <h2
+        class="text-black md:mt-5 mt-2 lg:mt-1 text-center md:text-left md:text-2xl text-base lg:text-xl px-2 md:px-0"
       >
-        <Icon name="line-md:phone-call-loop" class="size-8" />
-        <span>Llamar ahora</span>
-      </button>
+        Comunicate con nosotros y te ayudamos a solucionar tus problemas
+      </h2>
     </div>
     <span
-      class="text-black mt-5 text-center md:text-left text-4xl 2xl:text-4xl px-2 font-bold md:flex hidden"
+      class="text-black md:mt-5 2xl:mt-5 mt-5 lg:mt-1 text-center md:text-left text-5xl lg:text-5xl 2xl:text-6xl px-2 font-bold md:flex hidden"
     >
       639 98 08 62 / 624 46 33 73
     </span>
     <div
-      class="text-black mt-5 text-center md:text-left text-4xl 2xl:text-5xl px-2 font-bold md:hidden flex flex-col"
+      class="text-black mt-2 text-center md:text-left text-4xl 2xl:text-5xl px-2 font-bold md:hidden flex flex-col"
     >
       <p>639 98 08 62</p>
       <p>624 46 33 73</p>
     </div>
-  </div>
-  <div
-    class="hidden md:inline-flex items-center justify-end"
-    data-aos="flip-up"
-  >
-    <Image
-      src="/logo_home.webp"
-      width={10}
-      height={10}
-      alt="Cerrajero 24h"
-      class="w-10/12 2xl:w-11/12 2xl:m-1"
-      loading={"eager"}
-    />
+    <div
+      class="px-2 md:px-0 2xl:inline-flex md:inline-flex lg:inline-flex mt-4"
+    >
+      <Button text="Llamar ahora" onClick="tel:639980862" />
+    </div>
   </div>
 </section>
-

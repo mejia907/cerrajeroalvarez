@@ -1,15 +1,12 @@
 ---
-import { Icon } from "astro-icon/components";
+import Button from "./common/Button.astro";
+import TitleSection from "./common/TitleSection.astro";
 ---
 
-<section class="scroll-mt-16 pt-10" id="home">
+<section class="scroll-mt-16 pt-10 max-w-7xl mx-auto" id="home">
   <div class="px-4 py-8 mx-auto max-w-full lg:px-8 lg:py-10">
     <div class="md:mx-auto sm:text-center max-w-8xl">
-      <h2
-        class="text-3xl md:text-5xl font-bold leading-tighter tracking-tighter mb-5 font-heading"
-      >
-        Cerrajeros 24 HORAS en Barcelona
-      </h2>
+      <TitleSection title="Cerrajeros 24 HORAS en Barcelona" />
       <div
         class="mx-auto space-y-6 md:grid-cols-2 md:space-y-0 text-lg text-justify"
       >
@@ -24,14 +21,7 @@ import { Icon } from "astro-icon/components";
             <span class="font-bold text-2xl">639 98 08 62 – 624 46 33 73</span>
           </div>
           <div class="my-2 flex justify-center items-center text-center">
-            <button
-              class="bg-gradient-to-tl from-amber-500 to-yellow-400 hover:bg-yellow-600 text-xl font-semibold text-white px-4 py-2 rounded-xl flex items-center md:w-full justify-center"
-              onclick="window.location.href = 'tel:624463373';"
-              data-aos="zoom-in"
-            >
-              <Icon name="line-md:phone-call-loop" class="size-8 mr-2" />
-              <span>Llámanos</span>
-            </button>
+            <Button text="Llámanos" onClick="tel:624463373" animate={true} />
           </div>
         </div>
         <p class="mt-5">

@@ -23,9 +23,10 @@ const itemsMenu = [
 ---
 
 <header
-  class="flex items-center top-0 z-20 bg-white justify-center sticky pt-3"
-  data-aos="fade-down"
+  class="flex top-0 z-50 bg-white justify-center sticky pt-2 items-center "
+  data-aos="fade-down" data-aos-offset="500" data-aos-duration="500"
 >
+<div class="flex items-center max-w-7xl md:mx-10 mx-8">
   <div class="text-black text-2xl font-bold">
     <a href="/">
       <Image
@@ -33,18 +34,23 @@ const itemsMenu = [
         width={10}
         height={10}
         alt="Cerrajero 24h"
-        class="w-[50%] 2xl:w-[30%] lg:w-[35%]"
+        class="w-[50%] 2xl:w-[25%] lg:w-[25%]"
         loading={"eager"}
       />
     </a>
   </div>
-  <button id="hamburger" class="md:hidden text-black absolute right-0 text-xl">
-    <Icon name="mdi:menu" class="size-8" />
-  </button>
-  <button id="closeMenu" class="hidden text-black absolute right-0 text-xl">
-    <Icon name="mdi:close" class="size-8" />
-  </button>
-  <div class="hidden md:flex md:justify-center md:tems-center" id="menu" >
+  <div class="flex justify-center items-center">
+    <button
+      id="hamburger"
+      class="md:hidden text-black absolute text-xl"
+    >
+      <Icon name="mdi:menu" class="size-8" />
+    </button>
+    <button id="closeMenu" class="hidden text-black absolute text-xl">
+      <Icon name="mdi:close" class="size-8" />
+    </button>
+  </div>
+  <div class="hidden md:flex md:justify-center md:tems-center" id="menu">
     <ul
       class="fixed bg-white w-[80%] h-[100vh] xl:h-[10vh] md:w-[40%] pt-10 xl:w-full left-0 top-0 xl:static flex-1 flex-col xl:flex-row items-center gap-10 text-gray-500 text-xl md:text-lg transition-all duration-500 z-50 lg:justify-end flex"
     >
@@ -62,6 +68,7 @@ const itemsMenu = [
       }
     </ul>
   </div>
+</div>
 </header>
 
 <script>

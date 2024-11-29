@@ -6,9 +6,11 @@ import Hero from "../components/Hero.astro";
 import { Slide } from "../components/Slide";
 import Company from "../components/Company.astro";
 import Services from "../components/Services.astro";
+import Brands from "../components/Brands.astro";
 import Clients from "../components/Clients.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
+import Whatsapp from "../components/common/Whatsapp.astro";
 
 import "aos/dist/aos.css";
 
@@ -39,7 +41,7 @@ const slides = [
 ---
 
 <Layout title="Cerrajero 24h - Servicio puntual">
-	<main class="bg-transparent px-4 lg:px-16 2xl:px-52">
+	<main class="bg-transparent w-full">
 		<Header />
 		<Hero />
 		<Slide
@@ -50,26 +52,21 @@ const slides = [
 		/>
 		<Company />
 		<Services />
+		<Brands />
 		<Clients />
 		<Contact />
-	</main>
-	<Footer />
-	<!-- Whatsapp -->
-	<div class="fixed">
-		<Icon
-			name="logos:whatsapp-icon"
-			class="fixed size-12 md:bottom-8 bottom-16 md:right-7 right-3 hover:rounded-full p-[2px] hover:border-green-500 hover:border-2 cursor-pointer"
-			onclick="window.open('https://api.whatsapp.com/send?phone=34639980862', '_blank')"
-		/>
-	</div>
-	<!-- Icono llamar solo en modo mobile -->
-	<button
-		class="fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-tl from-amber-500 to-yellow-400 hover:bg-yellow-600 text-xl font-semibold text-white px-4 py-3 items-center w-full flex md:hidden text-center justify-center"
-		onclick="window.location.href = 'tel:639980862';"
-	>
-		<Icon name="line-md:phone-call-loop" class="size-8 mr-2" />
-		<span>Llamar ahora</span>
-	</button>
+		<Footer />
+
+		<!-- Whatsapp -->
+		<Whatsapp />
+		<!-- Icono llamar solo en modo mobile -->
+		<button
+			class="fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-tl from-amber-500 to-yellow-400 hover:bg-yellow-600 text-xl font-semibold text-white px-4 py-3 items-center w-full flex md:hidden text-center justify-center z-20"
+			onclick="window.location.href = 'tel:639980862';"
+		>
+			<Icon name="line-md:phone-call-loop" class="size-8 mr-2" />
+			<span>Llamar ahora</span>
+		</button>
 </Layout>
 
 <!--Libreria animaciones AOS -->
