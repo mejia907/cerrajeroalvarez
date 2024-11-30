@@ -1,6 +1,54 @@
 ---
+import { Icon } from "astro-icon/components";
 import Button from "./common/Button.astro";
 import TitleSection from "./common/TitleSection.astro";
+
+const itemsLocation = [
+  {
+    icon: "mdi:location",
+    title: "Barcelona",
+  },
+  {
+    icon: "mdi:location",
+    title: "L'Hospitalet de Llobregat",
+  },
+  {
+    icon: "mdi:location",
+    title: "Terrassa",
+  },
+  {
+    icon: "mdi:location",
+    title: "Badalona",
+  },
+  {
+    icon: "mdi:location",
+    title: "Sabadell",
+  },
+  {
+    icon: "mdi:location",
+    title: "Mataró",
+  },
+  {
+    icon: "mdi:location",
+    title: "Santa Coloma de Gramanet",
+  },
+  {
+    icon: "mdi:location",
+    title: "Sant Cugat del Vallés",
+  },
+  {
+    icon: "mdi:location",
+    title: "Cornellá de Llobregat",
+  },
+  {
+    icon: "mdi:location",
+    title: "Sant Boi de Llobregat",
+  },
+  {
+    icon: "mdi:location",
+    title: "Castelldefels",
+  },
+];
 ---
 
 <section class="scroll-mt-16 pt-10 max-w-7xl mx-auto" id="home">
@@ -12,9 +60,25 @@ import TitleSection from "./common/TitleSection.astro";
       >
         Somos Cerrajeros 24 horas en Barcelona líderes en el mercado de
         cerrajería, ofrecemos servicios de: Aperturas URGENTE de puertas,
-        instalación y venta de cerraduras, reparación de cerraduras, copia de
-        llaves, instalación y venta de Alarmas para puerta, bombines o
-        cilindros, candados, escudos de seguridad y más elementos de seguridad.
+        instalación y venta de cerraduras, reparación de cerraduras, instalación
+        y venta de Alarmas para puerta, bombines ó cilindros, candados, escudos
+        de seguridad y más elementos de seguridad.
+        <p class="mt-5">
+          Prestamos nuestro servicio en todo Barcelona y sus diferentes
+          localidades:
+        </p>
+        <div class="md:py-5 py-0">
+          <ul class="list-none list-inside">
+            {
+              itemsLocation.map(({ icon, title }) => (
+                <li class="flex text-center items-center">
+                  {" "}
+                  <Icon name={icon} class="size-5 mr-2 text-red-600" /> {title}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
         <div class="mt-3 grid md:flex md:grid-cols-1 mb-3">
           <div class="md:grid-cols-2 mr-2">
             <p>Contáctenos en la línea única nacional:</p>
