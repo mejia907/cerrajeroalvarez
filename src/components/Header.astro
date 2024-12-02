@@ -41,12 +41,13 @@ const itemsMenu = [
   </div>
   <div class="flex justify-center items-center">
     <button
-      id="hamburger"
+      id="openMenu"
+      aria-label="Open Menu"
       class="md:hidden text-black absolute text-xl"
     >
       <Icon name="mdi:menu" class="size-8" />
     </button>
-    <button id="closeMenu" class="hidden text-black absolute text-xl">
+    <button id="closeMenu" aria-label="Close Menu" class="hidden text-black absolute text-xl">
       <Icon name="mdi:close" class="size-8" />
     </button>
   </div>
@@ -76,7 +77,7 @@ const itemsMenu = [
   AOS.init();
 
   document.addEventListener("DOMContentLoaded", () => {
-    const hamburger = document.getElementById("hamburger");
+    const openMenu = document.getElementById("openMenu");
     const menu = document.getElementById("menu");
     const close = document.getElementById("closeMenu");
     const optionsMenu = document.querySelectorAll("#menu li a");
@@ -85,14 +86,14 @@ const itemsMenu = [
       menu?.classList.toggle("hidden");
     }
 
-    hamburger?.addEventListener("click", () => {
+    openMenu?.addEventListener("click", () => {
       close?.classList.toggle("hidden");
-      hamburger?.classList.toggle("hidden");
+      openMenu?.classList.toggle("hidden");
       closeMenu();
     });
 
     close?.addEventListener("click", () => {
-      hamburger?.classList.toggle("hidden");
+      openMenu?.classList.toggle("hidden");
       close?.classList.toggle("hidden");
       closeMenu();
     });
@@ -100,7 +101,7 @@ const itemsMenu = [
     optionsMenu.forEach((option) => {
       option.addEventListener("click", () => {
         close?.classList.toggle("hidden");
-        hamburger?.classList.toggle("hidden");
+        openMenu?.classList.toggle("hidden");
         closeMenu();
       });
     });
