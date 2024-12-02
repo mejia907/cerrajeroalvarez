@@ -12,5 +12,6 @@ export default defineConfig({
   devToolbar: {
     enabled: false
   },
-  integrations: [tailwind(), icon(), react()]
+  integrations: [tailwind(), icon(), react()],
+  site: 'https://cerrajeroluis24horas.com',
 });
