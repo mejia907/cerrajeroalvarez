@@ -1,10 +1,31 @@
 ---
 import { Icon } from "astro-icon/components";
+import { IconFacebook } from "./common/icons/IconFacebook";
+import { IconWhatsapp } from "./common/icons/IconWhatsapp";
+import { IconInstagram } from "./common/icons/IconInstagram";
+
+const social = [
+  { 
+    label: "Whatsapp", 
+    icon: IconWhatsapp, 
+    url: "https://wa.me/34624463373" 
+  },
+  {
+    label: "Instagram",
+    icon: IconInstagram,
+    url: "https://www.instagram.com/cerrajero_24_horas",
+  },
+  {
+    label: "Facebook",
+    icon: IconFacebook,
+    url: "https://www.facebook.com/profile.php?id=61569272860595",
+  },
+];
 ---
 
 <footer class="border-t border-primary bg-primary">
   <div class="grid md:grid-cols-2">
-    <div class="mx-2.5 md:ml-8 py-4 md:py-10  ">
+    <div class="mx-2.5 md:ml-8 py-4 md:py-10">
       <div class="flex gap-4 py-4 md:py-10">
         <div class="col-span-12 lg:col-span-4 pr-8">
           <div class="mb-2">
@@ -12,7 +33,7 @@ import { Icon } from "astro-icon/components";
               Contáctenos
             </a>
           </div>
-          <div class="text-sm ">
+          <div class="text-sm">
             <ul class="text-base text-black">
               <li class="mb-2 flex">
                 <Icon name="mdi:phone" class="size-5 mr-2" /> 624 46 33 73
@@ -25,25 +46,43 @@ import { Icon } from "astro-icon/components";
                 - España
               </li>
             </ul>
+            <ul class="flex md:order-1 -ml-1 md:ml-0 md:mb-0">
+              {
+                social.map(({ label, url, icon: Icon }, index) => (
+                  <li class="mr-2">
+                    <a
+                      class="hover:bg-black hover:text-primary focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 inline-flex items-center"
+                      target="_blank"
+                      aria-label={label}
+                      title={label}
+                      href={url}
+                    >
+                      {Icon && <Icon />}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
           </div>
         </div>
       </div>
-      <div
-        class="md:flex md:items-center py-6 md:py-8 "
-      >
+      <div class="md:flex md:items-center py-3 md:py-4">
         <div class="text-xs md:text-sm text-black">
           © 2024
-          <a class="hover:underline" href="#home">
-            CERRAJEROS 24 HORAS
-          </a>
+          <a class="hover:underline" href="#home"> CERRAJEROS 24 HORAS </a>
           · Todos los derechos reservados.
         </div>
       </div>
     </div>
-    <div class="mx-2.5 md:max-w-4xl max-w-sm py-0 md:py-20 text-sm mb-20 md:mb-0 text-black">
+    <div
+      class="mx-2.5 md:max-w-4xl max-w-sm py-0 md:py-20 text-sm mb-20 md:mb-0 text-black"
+    >
       <p>
-        <strong>Política de privacidad</strong> 
-        <p>Quiénes somos Propiedad: LUIS MANUEL CAGIGAS LOPEZ. La dirección de nuestra web es: https://cerrajeroluis24horas.com.</p>
+        <strong>Política de privacidad</strong>
+        <p>
+          Quiénes somos Propiedad: LUIS MANUEL CAGIGAS LOPEZ. La dirección de
+          nuestra web es: https://cerrajeroluis24horas.com.
+        </p>
       </p>
       <p class="mt-4">
         <strong>Contenido incrustado de otros sitios web: </strong>
