@@ -12,7 +12,7 @@ type SlideProps = {
 
 export const Slide = ({ slides, withImage, heightImage }: SlideProps) => {
 
-   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+   const [emblaRef] = useEmblaCarousel({ loop: true }, [
       AutoScroll({ playOnInit: true })
    ])
 

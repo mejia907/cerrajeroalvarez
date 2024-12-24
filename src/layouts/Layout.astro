@@ -6,31 +6,57 @@ interface Props {
 }
 
 const { title } = Astro.props;
-console.log(Astro.request.url);
-
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<link rel="sitemap" href="/sitemap-index.xml" />
+		<link rel="alternate" hreflang="es-ES" href="https://cerrajeroluis24horas.com">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="keywords" content="cerrajero urgente, cerrajero Barcelona, cerrajero urgente Barcelona, apertura de puertas Barcelona, cambio de cerraduras Barcelona, cerrajeria 24h Barcelona, cerrajero 24h Barcelona">
 		<SEO
-			title="Cerrajero 24 HORAS Barcelona"
-			description="Cerrajeros 24 horas Barcelona líderes del mercado de cerrajería, ofrecemos servicios de aperturas URGENTE de puertas, instalación y venta de cerraduras"
+			title="Cerrajero urgente - Barcelona"
+			description="Cerrajero profesional Barcelona disponible 24h. Ofrecemos servicios rápidos y eficaces en toda la ciudad. ¡Contáctanos para emergencias!"
 			canonical={Astro.site}
-			charset="UTF-8"
+			charset="utf-8"
 			openGraph={{
 				basic: {
-					title: "Cerrajero 24 HORAS Barcelona",
+					title: "Cerrajero urgente barcelona. Apertura de puertas, cambio de cerraduras, cerrajeria 24 horas",
 					type: "website",
 					image: "/logo.webp",
 					url: Astro.site,
+				},
+				optional:{
+					locale: "es-ES",
+					description: "Cerrajero urgente Barcelona, servicios 24 horas, apertura de puertas, cambio de cerraduras y más.",
+					siteName: "Cerrajeros 24 servicio puntual. Cerrajero urgente Barcelona",
 				}
 			}}
 		/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="application/ld+json">
+			{
+				"@context": "http://schema.org",
+				"@type": "LocalBusiness",
+				"name": "Cerrajero urgente Barcelona 24h",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "Cataluña, España",
+					"addressLocality": "Cataluña, España",
+					"addressRegion": "Cataluña",
+					"postalCode": "08001",
+					"addressCountry": "ES"
+				},
+				"telephone": "+34 624 463 373",
+				"url": "https://cerrajeroluis24horas.com",
+				"sameAs": [			
+					"https://www.instagram.com/cerrajero_24_horas"
+				],
+				"openingHours": "Mo-Su 00:00-23:59",
+				"description": "Cerrajero urgente Barcelona, servicios 24h, apertura de puertas, cambio de cerraduras y más."
+			}
+			</script>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="keywords" content="cerrajero, cerrajero 24 horas, estropeo la cerradura, llave por dentro, cerrajero barcelona, se me olvido por dentro la llave, se me partio la llave, se me rompio la llave" />
 		<title>{title}</title>
 	</head>
 	<body>
