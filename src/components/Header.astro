@@ -100,9 +100,11 @@ const itemsMenu = [
 
     optionsMenu.forEach((option) => {
       option.addEventListener("click", () => {
-        close?.classList.toggle("hidden");
-        openMenu?.classList.toggle("hidden");
-        closeMenu();
+        if (window.innerWidth <= 1250) {
+          close?.classList.toggle("hidden");
+          openMenu?.classList.toggle("hidden");
+          closeMenu();
+        }
       });
     });
   });

@@ -1,6 +1,5 @@
 export const IconInstagram = () => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
     className="icon icon-tabler icon-tabler-brand-instagram"
     width="24"
     height="24"

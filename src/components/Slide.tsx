@@ -23,7 +23,7 @@ export const Slide = ({ slides, withImage, heightImage }: SlideProps) => {
                <div className="embla__container ">
                   {slides.map((img, index) => (
                      <div className="embla__slide" key={index}>
-                        <img src={`${img.image}`} className={`shadow-img gap-x-10 ${heightImage} ${withImage}`} alt="Cerrajero 24h"  />
+                        <img src={`${img.image}`} className={`shadow-img gap-x-10 ${heightImage} ${withImage}`} alt={img.alt}  />
                      </div>
                   ))}
                </div>
