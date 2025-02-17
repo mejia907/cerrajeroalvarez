@@ -1,6 +1,7 @@
 ---
 import { SEO } from "astro-seo";
 import GoogleAnalytics from "../components/common/GoogleAnalytics.astro";
+import AOS from "../components/common/AOS.astro";
 ---
 
 <!doctype html>
@@ -8,16 +9,7 @@ import GoogleAnalytics from "../components/common/GoogleAnalytics.astro";
 	<head>
 		<GoogleAnalytics />
 		<link rel="sitemap" href="/sitemap-index.xml" />
-		<link
-			rel="alternate"
-			hreflang="es-ES"
-			href="https://cerrajeroluis24horas.com"
-		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta
-			name="keywords"
-			content="cerrajero urgente, cerrajero Barcelona, cerrajero urgente Barcelona, apertura de puertas Barcelona, cambio de cerraduras Barcelona, cerrajeria 24h Barcelona, cerrajero 24h Barcelona, cerrajero 24h, cerrajero urgente rápido"
-		/>
 		<SEO
 			title="Cerrajero urgente Barcelona | Apertura de puertas, cambio de cerraduras"
 			description="Cerrajero profesional Barcelona disponible 24h. Ofrecemos servicios rápidos y eficaces en toda la ciudad. ¡Contáctanos para emergencias!"
@@ -46,8 +38,8 @@ import GoogleAnalytics from "../components/common/GoogleAnalytics.astro";
 				"name": "Cerrajero urgente Barcelona 24h",
 				"address": {
 					"@type": "PostalAddress",
-					"streetAddress": "Cataluña, España",
-					"addressLocality": "Cataluña, España",
+					"streetAddress": "Carrer de Cristóbal de Moura, 229",
+					"addressLocality": "Barcelona",
 					"addressRegion": "Cataluña",
 					"postalCode": "08001",
 					"addressCountry": "ES"
@@ -60,6 +52,7 @@ import GoogleAnalytics from "../components/common/GoogleAnalytics.astro";
 			}
 		</script>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<AOS />
 	</head>
 	<body>
 		<slot />

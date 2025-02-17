@@ -1,13 +1,10 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
 import tailwind from '@astrojs/tailwind';
-
 import icon from 'astro-icon';
-
 import react from '@astrojs/react';
-
 import sitemap from '@astrojs/sitemap';
+import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,12 +12,20 @@ export default defineConfig({
     enabled: false
   },
   site: 'https://cerrajeroluis24horas.com',
-  integrations: [tailwind(), icon(), react(),
-  sitemap({
-    i18n: {
-      defaultLocale: 'es',
-      locales: { es: 'es-ES', fr: 'fr-CA' },
-    }
-  })
+  integrations: [
+    tailwind(),
+    icon(),
+    react(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'es',
+        locales: { es: 'es-ES', fr: 'fr-CA' },
+      }
+    }),
+    partytown({
+      config: {
+        forward: ['dataLayer.push'],
+      },
+    }),
   ],
 });

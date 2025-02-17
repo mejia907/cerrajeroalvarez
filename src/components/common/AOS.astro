@@ -1,0 +1,14 @@
+---
+import AosInstance from "aos";
+import "aos/dist/aos.css"; // Importa los estilos de AOS
+---
+
+<script is:inline>
+  // Inicializa AOS cuando el DOM esté listo
+  document.addEventListener("DOMContentLoaded", () => {
+    AosInstance.init({
+      duration: 1000,
+      once: true,
+    });
+  });
+</script>

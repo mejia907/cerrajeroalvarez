@@ -12,8 +12,6 @@ import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
 import Whatsapp from "../components/common/Whatsapp.astro";
 
-import "aos/dist/aos.css";
-
 /// Lista de imagenes para el slider [public/slides]
 const slides = [
 	{
@@ -75,12 +73,3 @@ const slides = [
 			<span>Llamar ahora</span>
 		</button>
 </Layout>
-
-<!--Libreria animaciones AOS -->
-<script >
-	import AOS from "aos";
-	AOS.init({
-		duration: 1000,
-		once: true,
-	});
-</script>
