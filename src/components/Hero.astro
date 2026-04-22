@@ -4,60 +4,46 @@ import Button from "./common/Button.astro";
 ---
 
 <section
-  class="mt-4 lg:mt-0 2xl:mt-0 w-auto flex bg-white h-screen flex-col items-center bg-no-repeat bg-cover"
+  class="relative w-full min-h-screen flex flex-col items-center bg-white bg-no-repeat bg-cover overflow-hidden"
   style="background-image: url('/background.png')"
 >
-  <Image
-    src="/home.webp"
-    width={10}
-    height={10}
-    alt="Cerrajero 24h barcelona"
-    class="md:w-[23%] lg:w-[23%] w-[70%] z-0"
-    loading={"eager"}
-    data-aos="zoom-out"
-    data-aos-duration="2000"
-  />
+  <!-- Contenedor de imagen (solo mitad visible) -->
+  <div class="w-full flex justify-center pt-10 pb-20">
+    <Image
+      src="/home.webp"
+      width={500}
+      height={500}
+      alt="Cerrajero urgente 24h"
+      class="w-[70%] sm:w-[50%] md:w-[35%] lg:w-[25%] object-cover"
+      loading="eager"
+      data-aos="zoom-out"
+      data-aos-duration="2000"
+    />
+  </div>
+
+  <!-- Card superpuesta -->
   <div
-    class="md:w-3/5 w-[90%] h-[60%] md:h-[33%] lg:h-[50%] 2xl:h-[48%] bg-white top-[44%] border-2 border-primary rounded-lg z-10 flex flex-col items-center absolute"
+    class="relative -mt-32 sm:-mt-40 md:-mt-48 w-[90%] max-w-3xl bg-white border-2 border-primary rounded-xl shadow-xl flex flex-col items-center text-center p-6 md:p-8 z-10"
     data-aos="zoom-in"
     data-aos-duration="1000"
   >
-    <div
-      class="lg:pt-1 2xl:pt-4 pt-2 px-2 md:px-0 2xl:inline-flex md:inline-flex lg:inline-flex text-center items-center justify-center flex"
-    >
-      <h1
-        class="text-black font-bold md:text-7xl lg:text-5xl text-5xl 2xl:text-7xl"
-      >
-        CERRAJERO URGENTE
-      </h1>
-    </div>
-    <div class="text-center items-center justify-center flex">
-      <h2
-        class="text-2xl lg:text-3xl 2xl:text-5xl text-black w-full font-bold mt-1 2xl:mt-5 lg:mt-0 px-4 md:px-0"
-      >
-        Abrir y cambiar cerraduras
-      </h2>
-    </div>
-    <div class="text-center items-center justify-center flex">
-      <span
-        class="text-black md:mt-5 mt-2 lg:mt-1 text-center md:text-left md:text-2xl text-lg lg:text-xl px-2 md:px-0"
-      >
-        Comunícate con nosotros y te ayudamos a solucionar tus problemas
-      </s>
-    </div>
-    <span
-      class="text-black md:mt-5 2xl:mt-5 mt-5 lg:mt-1 text-center md:text-left text-5xl lg:text-5xl 2xl:text-6xl px-2 font-bold"
-    >
+    <h1 class="text-black font-bold text-3xl sm:text-5xl lg:text-6xl">
+      CERRAJERO URGENTE
+    </h1>
+
+    <h2 class="text-black font-bold text-xl sm:text-2xl lg:text-3xl mt-2">
+      Abrir y cambiar cerraduras
+    </h2>
+
+    <p class="text-black text-base sm:text-lg md:text-xl mt-3 max-w-xl">
+      Comunícate con nosotros y te ayudamos a solucionar tus problemas
+    </p>
+
+    <span class="text-black font-bold text-3xl sm:text-4xl lg:text-5xl mt-4">
       624 46 33 73
     </span>
-    <!-- <div
-      class="text-black mt-2 text-center md:text-left text-4xl 2xl:text-5xl px-2 font-bold md:hidden flex flex-col"
-    >
-      <p>624 46 33 73</p>
-    </div> -->
-    <div
-      class="px-2 md:px-0 2xl:inline-flex md:inline-flex lg:inline-flex mt-4"
-    >
+
+    <div class="mt-5">
       <Button text="Llamar ahora" onClick="tel:624463373" />
     </div>
   </div>
